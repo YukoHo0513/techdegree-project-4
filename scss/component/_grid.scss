@@ -1,0 +1,70 @@
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+
+.container {
+padding: 0 10px;
+}
+
+.row {
+display: flex;
+flex-direction: column;
+padding: 1em 10px;
+}
+
+[class^=col] {
+margin-top: 10px;
+flex-basis: 100%;
+min-height: 25px;
+padding: 10px;
+border-radius: 5px;
+}
+
+@for $i from 1 through 12 {
+    .theme.col-#{$i} {
+        @include get-color-from-list($i);
+    }
+}
+
+
+@media (min-width: $breakpoint) {
+
+    .container {
+      max-width: 1400px;
+      @include center;
+    }
+    
+    .centered {
+      @include center;
+    }
+    
+    .row {
+      flex-direction: row;
+    }
+    
+    [class^=col] {
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+      align-items: center;
+    }
+    
+    [class^=col] + [class^=col] {
+      margin-left: 10px;
+    }
+
+    @for $j from 1 through 12 {
+        .col-#{$j} {
+            @include get-col-from-list($j)
+        }
+    }
+}
+
+.card {
+flex-basis: 100%;
+}
+
+
+
+
+

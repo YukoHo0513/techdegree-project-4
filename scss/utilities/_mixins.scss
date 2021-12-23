@@ -1,0 +1,17 @@
+
+// Centering images
+@mixin center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+// Grid lists
+@mixin get-color-from-list($i) {
+    background-color: nth($colors, $i);
+}
+
+@mixin get-col-from-list($j) {
+    flex-basis: nth($cols, $j);
+}
